@@ -1,44 +1,13 @@
-pipeline{
-
-    agent any
-
-    stages {
-
-        stage ('Compile Stage') {
-
-            steps {
-
-                withMaven(maven: 'maven_3_5_0') {
-                    sh 'mvn clean install'
-
-                }
-
-            }
-        }
-    stage ('Test Stage') {
-
-            steps {
-
-                withMaven(maven: 'maven_3_5_0') {
-                    sh 'mvn test'
-
-                }
-
-            }
-        }
-
-
-        stage ('Cucumber Reports') {
-
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
-
-            }
-
-        }
-
-    }
-
+node {
+	stage ('SCM checkout'){
+		git "https://github.com/alekRamoos/jenkins_yaman"
+		}
+	stage ('Build'){
+    	dir("comtest") {
+	   sh "mvn clean install"
+       }
+       	dir("comtest/target") {
+	   sh "java -jar com.test-1.0-SNAPSHOT.jar"
+       }
+		}
 }
