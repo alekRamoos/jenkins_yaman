@@ -1,0 +1,84 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      },
+      {
+        "line": 2,
+        "value": "#encoding: utf-8"
+      },
+      {
+        "line": 3,
+        "value": "#Author: aleksander-yaman"
+      }
+    ],
+    "line": 6,
+    "elements": [
+      {
+        "line": 9,
+        "name": "Validar o retorno da busca",
+        "description": "",
+        "id": "pesquisa-google;validar-o-retorno-da-busca",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 149343990,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "que estou na pagina inicial da google",
+            "match": {
+              "location": "StepDefinition.que_estou_na_pagina_inicial_da_google()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1891996,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "realizo uma busca por \"jenkins\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jenkins",
+                  "offset": 23
+                }
+              ],
+              "location": "StepDefinition.realizo_uma_busca_por(String)"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 46337,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "deve ser apresentado itens relacionados",
+            "match": {
+              "location": "StepDefinition.deve_ser_apresentado_itens_relacionados()"
+            },
+            "keyword": "Entao "
+          }
+        ],
+        "tags": [
+          {
+            "line": 8,
+            "name": "@yamanTest"
+          }
+        ]
+      }
+    ],
+    "name": "pesquisa google",
+    "description": "",
+    "id": "pesquisa-google",
+    "keyword": "Funcionalidade",
+    "uri": "testYaman.feature"
+  }
+]

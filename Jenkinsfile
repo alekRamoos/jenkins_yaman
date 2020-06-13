@@ -3,9 +3,6 @@ node {
 		git "https://github.com/alekRamoos/jenkins_yaman"
 		}
 	stage ('Build'){
-    	dir("comtest") {
-	   sh "mvn clean install"
-       }
        	dir("comtest/target") {
 	   sh "java -jar treinamentoJenkins-0.0.1-SNAPSHOT.jar"
        }
