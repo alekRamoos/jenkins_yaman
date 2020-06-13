@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
         tags = {"@yamanTest"}
 		)
 
-public class runTest extends utils{
+public class runTest {
 
 }
 
